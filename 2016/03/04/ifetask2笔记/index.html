@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>Arctic/Zoo</title>
+  <title>百度IFE前端春季班TASK2笔记 | Arctic/Zoo</title>
   <meta name="description" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -137,7 +137,7 @@
                 
                 <div id="nav-container">
                     <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#">undefined</a></li>
+                        <li id="navbar-title"><a href="#">百度IFE前端春季班TASK2笔记</a></li>
                         <li id="navbar-toc" style="border-left: none">
                             <a style="padding-right: 15px">
                                 <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
@@ -156,80 +156,65 @@
 
 
 <!-- -->
-<!--<body class="home-template">-->
+<!--<body class="post-template">-->
 <!---->
   
+
 <main class="content" role="main">
+    <article class="post" >
+    <span class="post-meta">
+                  <div class="tag-tile">
+                      
+                      
+                      <a data-pjax href='/tags/JavaScript/' style='color:#D5D5D5'>JavaScript</a>
+                      
+                      <a data-pjax href='/tags/前端/' style='color:#D5D5D5'>前端</a>
+                      
+                      <a data-pjax href='/tags/笔记/' style='color:#D5D5D5'>笔记</a>
+                      
+                      
+                  </div>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">百度IFE前端春季班TASK2笔记</h1>
 
-    
-    <article class="post">
+                    <div class="post-meta">
+                        Post on<span class="fa fa-clock-o"></span>
+                        <time datetime="2016-03-03T16:21:57.000Z"
+                              itemprop="datePublished">2016-03-04</time>
+                    </div>
+    </span>
 
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/JavaScript/'>JavaScript</a>
-                
-                <a data-pjax href='/tags/前端/'>前端</a>
-                
-                <a data-pjax href='/tags/笔记/'>笔记</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2016/03/04/ifetask2笔记/">百度IFE前端春季班TASK2笔记</a>
-            </h1>
+        <section class="post-content">
+            <p>##百度IFE前端春季班TASK2笔记</p>
+<p>###TASK2-1</p>
+<p>要求：输入框中用来输入兴趣爱好，允许用户用换行、空格（全角/半角）、逗号（全角/半角）、顿号、分号来作为不同爱好的分隔。用户输入的爱好数量不能超过10个，也不能什么都不输入。当发生异常时，在按钮上方显示一段红色的错误提示文字，并且不继续执行后面的行为；当输入正确时，提示文字消失。同时，当点击按钮时，每一个爱好输出成为一个checkbox，爱好内容作为checkbox的label。</p>
+<p>学习到的知识点</p>
+<ol>
+<li>利用正则表达式编写trim()修剪每个数据前面出现的空格<br>var trimer = new RegExp(“(^\s+)|(\s+$)”,”g”)</li>
+<li>一种数组去重的思路：仅支持现代浏览器，创建一个数组，将旧的数组的元素传入新的数组，每次传入利用indexOf检查索引，为-1说明里面还没有这个元素，完成传送，否则不传送</li>
+<li>dom中style对象对元素的操作</li>
+<li>对domReady，dom事件行为，dom事件冒泡，dom事件对象，dom分级等的进一步理解（还是有一部分疑问）<br>5.JavaScript中的split方法，把字符串切割，并存入数组中<br>/\,|\，|\、|\;|\；/</li>
+</ol>
+<p>一句题外话 第一次使用hexo编写博客就踩到了一个隐藏的坑，在md文件的诸如tag：等标记后要加一个空格 没有就会莫名报错…可能是格式规定。</p>
 
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2016-03-03T16:21:57.000Z"
-                      itemprop="datePublished">2016-03-04</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                ##百度IFE前端春季班TASK2笔记
-###TASK2-1
-要求：输入框中用来输入兴趣爱好，允许用户用换行、空格（全角/半角）、逗号（全角/半角）、顿号、分号来作为不同爱好的分隔。用户输入的爱好数量不能超过10个，也不能什么都不输入。当发生异常时，在按钮上方显示一段红色的错误提示文字，并且不继续执行后面的行为；当输入正确时，提示文字消失。同时，当点击按钮时，每一个爱好输出成为一个checkbox，爱好内容作为checkbox的labe
-                
-            </p>
-            
         </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2016/02/26/hello-world/">Hello World</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2016-02-26T11:43:14.000Z"
-                      itemprop="datePublished">2016-02-26</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new p
-                
-            </p>
+        <hr/>
+        <nav class="pagination" style="width:auto" role="pagination">
             
+            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
+            
+            <a class="share-button" data-original-title title>Share this Post</a>
+            
+            <a data-pjax class="older-posts" href="/2016/02/26/hello-world/">Next Post →</a>
+            
+        </nav>
+        <br/>
+        <br/>
+        <section id="comment">
+            <div id="comment-box"></div>
         </section>
+
+
     </article>
-    
-    <nav class="pagination" role="pagination">
-        
-        <span class="page-number">Page 1 of 1</span>
-        
-    </nav>
 </main>
 
 
