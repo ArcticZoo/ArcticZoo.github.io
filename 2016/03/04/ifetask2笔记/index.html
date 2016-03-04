@@ -184,13 +184,20 @@
     </span>
 
         <section class="post-content">
-            <h2 id="TASK2-1"><a href="#TASK2-1" class="headerlink" title="TASK2-1"></a>TASK2-1</h2><p>要求：输入框中用来输入兴趣爱好，允许用户用换行、空格（全角/半角）、逗号（全角/半角）、顿号、分号来作为不同爱好的分隔。用户输入的爱好数量不能超过10个，也不能什么都不输入。当发生异常时，在按钮上方显示一段红色的错误提示文字，并且不继续执行后面的行为；当输入正确时，提示文字消失。同时，当点击按钮时，每一个爱好输出成为一个checkbox，爱好内容作为checkbox的label。</p>
+            <h2 id="TASK-2-1"><a href="#TASK-2-1" class="headerlink" title="TASK 2-1"></a>TASK 2-1</h2><p>要求：输入框中用来输入兴趣爱好，允许用户用换行、空格（全角/半角）、逗号（全角/半角）、顿号、分号来作为不同爱好的分隔。用户输入的爱好数量不能超过10个，也不能什么都不输入。当发生异常时，在按钮上方显示一段红色的错误提示文字，并且不继续执行后面的行为；当输入正确时，提示文字消失。同时，当点击按钮时，每一个爱好输出成为一个checkbox，爱好内容作为checkbox的label。</p>
 <p>学习到的知识点</p>
 <ol>
 <li>利用正则表达式编写trim()修剪每个数据前面出现的空格<br>var trimer = new RegExp(“(^\s+)|(\s+$)”,”g”)</li>
 <li>一种数组去重的思路：仅支持现代浏览器，创建一个数组，将旧的数组的元素传入新的数组，每次传入利用indexOf检查索引，为-1说明里面还没有这个元素，完成传送，否则不传送</li>
 <li>dom中style对象对元素的操作</li>
 <li>对domReady，dom事件行为，dom事件冒泡，dom事件对象，dom分级等的进一步理解（还是有一部分疑问）<br>5.JavaScript中的split方法，把字符串切割，并存入数组中<br>/\,|\，|\、|\;|\；/</li>
+</ol>
+<h2 id="TASK-2-2"><a href="#TASK-2-2" class="headerlink" title="TASK 2-2"></a>TASK 2-2</h2><p>要求：界面首先有一个文本输入框，允许按照特定的格式YYYY-MM-DD输入年月日；<br>输入框旁有一个按钮，点击按钮后，计算当前距离输入的日期的00:00:00有多少时间差<br>在页面中显示，距离YYYY年MM月DD日还有XX天XX小时XX分XX秒<br>每一秒钟更新倒计时上显示的数<br>如果时差为0，则倒计时停止</p>
+<p>学习到的知识点</p>
+<ol>
+<li>正则表达式，能力还不够做一个完整的判定年份的正则表达式，所以先是利用[0-9]{4}-([0-9]{2}|[1-9]{1})-([0-9]{2}|[1-9]{1})确定好格式，再用split函数将键入的value转化为年月1日分开存放的形式，再逐一对他们操作（不符合1标准格式的前面加0，不符合月份和日期格式的弹出err）</li>
+<li>date对象，利用dateObject.getTime能得到一个以毫秒为单位的值，求差再求除能得出具体的倒计时的日期</li>
+<li>setTimeInterval和clearInterval，如若不清除掉setTimeInterval，在新的click操作中旧的函数还是会被执行，引发错误。清除setTimeInterval的方法是给一个变量传window.setTimeInterval，这样这个变量就是setTimeInterval的ID,在clearInteval（）的时候传入这个ID即可清除。</li>
 </ol>
 <p>一句题外话 第一次使用hexo编写博客就踩到了一个隐藏的坑，在md文件的诸如tag：等标记后要加一个空格 没有就会莫名报错…可能是格式规定。</p>
 
@@ -220,7 +227,7 @@
 <footer class="site-footer">
     
     <div class="inner">
-        <section class="copyright"><a href="/"></a> &copy; Arctic/Zoo 2014</section>
+        <section class="copyright"><a href="/"></a> &copy; Arctic/Zoo 2016</section>
         <section class="poweredby">Published with <a target="_blank" href="http://hexo.io/">Hexo   </a> and Theme by <a target="_blank" href="https://github.com/yuche/hexo-theme-kael">Kael</a></section>
     </div>
 </footer>
