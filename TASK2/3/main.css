@@ -1,0 +1,39 @@
+﻿html{
+	margin: 0;
+	padding: 0;
+}
+
+#wrap-2{
+	overflow: hidden;
+	height: 235px;
+}
+#wrap{
+	width: 600px;
+	transition:all .5s;
+}
+img{
+	max-width: 600px;
+}
+#btn{
+	width: 600px;
+	text-align: center;
+}
+ul{
+	margin: 0 auto;
+	padding: 0;
+}
+.active{
+	background-color: #333;
+} /*为什么这个只有放在li前面才有用？*/
+li{
+	margin-top:5px;
+	list-style: none;
+	height: 12px;
+	width: 110px;
+	background-color: #ddd;
+	display: inline-block;
+	transition:all .3s;
+}
+li:hover{
+	background-color: #bbb;
+};
