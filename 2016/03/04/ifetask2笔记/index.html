@@ -43,6 +43,10 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/03/08/移动端HTML5页面笔记/">new article</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
                                     <a href="/2016/03/04/ifetask2笔记/">百度IFE前端春季班TASK2笔记</a>
                                 </li>
                                 
@@ -87,17 +91,22 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/JavaScript/">&nbsp;&nbsp;&nbsp;JavaScript</a>
-                                    <small>1</small>
+                                    <small>2</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/前端/">&nbsp;&nbsp;&nbsp;前端</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/移动端/">&nbsp;&nbsp;&nbsp;移动端</a>
                                     <small>1</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/笔记/">&nbsp;&nbsp;&nbsp;笔记</a>
-                                    <small>1</small>
+                                    <small>2</small>
                                 </li>
                                 
                                 </div>
@@ -115,6 +124,8 @@
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
                 
+                    <a  data-pjax href="/2016/03/08/移动端HTML5页面笔记/">new article</a>
+                
                     <a  data-pjax href="/2016/03/04/ifetask2笔记/">百度IFE前端春季班TASK2笔记</a>
                 
                     <a  data-pjax href="/2016/02/26/about-me/">About Me</a>
@@ -124,6 +135,8 @@
                     <a data-pjax href="/tags/JavaScript/">&nbsp;&nbsp;JavaScript</a>
                 
                     <a data-pjax href="/tags/前端/">&nbsp;&nbsp;前端</a>
+                
+                    <a data-pjax href="/tags/移动端/">&nbsp;&nbsp;移动端</a>
                 
                     <a data-pjax href="/tags/笔记/">&nbsp;&nbsp;笔记</a>
                 
@@ -204,7 +217,7 @@
 <ol>
 <li>轮播图的基本思想。之前用Jquery写过轮播图，大致了解怎么写。这次由于是用原生写，结构稍微有点变化，<br>主要是：这次将显示的函数和控制class变化的函数分开了，显示的函数只负责遍历是否具有指定的class，有就将margin-top值设成这个。<br>2.计时器部分，这一部分遇到了一个可能是新手常遇到的坑，我最开始用setInterval来进行计时，用clearInterval来取消计时，然后再setInterval，这样会有一个BUG就是会多次设置计时器，导致后面的速度会越来越快，这儿使用setTimeout加上它的自调用，避开了这个问题。</li>
 <li>这个项目中因为会多次对class进行操作，所以写了hasClass addClass removeClass和getClass等原生实现方法<br>getClass是通过获取TagName再遍历取value值进行比对得到的<br>另外几个是通过获取对象后（通过ID或者其他方法）通过className+=“”+clsName增加的，使用的时候先判定有没有（match（reg））class</li>
-<li>开始遇到了个延时的问题，因为showImg函数设置的先后位置不对，导致第一张图片会显示久一些，通过及时刷新showImg解决了这个问题</li>
+<li>开始遇到了个延时的问题，因为showImg函数设置的先后位置不对，导致第一张图片会显示久一些，通过及时刷新showImg解决了这个问题<br>5.关于（function(){}()） 这是一个立即执行的匿名函数 没有函数声明，这种形式在闭包中常用到，和for()连用</li>
 </ol>
 <p>项目展示：<br>task2-1：<a href="http://arcticzoo.github.io/TASK2/1/index.html" target="_blank" rel="external">http://arcticzoo.github.io/TASK2/1/index.html</a><br>task2-2：<a href="http://arcticzoo.github.io/TASK2/2/index.html" target="_blank" rel="external">http://arcticzoo.github.io/TASK2/2/index.html</a><br>task2-3：<a href="http://arcticzoo.github.io/TASK2/3/index.html" target="_blank" rel="external">http://arcticzoo.github.io/TASK2/3/index.html</a><br>task2-4：<br>task2-5：</p>
 <p>一句题外话 第一次使用hexo编写博客就踩到了一个隐藏的坑，在md文件的诸如tag：等标记后要加一个空格 没有就会莫名报错…可能是格式规定。</p>
@@ -213,7 +226,7 @@
         <hr/>
         <nav class="pagination" style="width:auto" role="pagination">
             
-            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
+            <a data-pjax class="newer-posts" href="/2016/03/08/移动端HTML5页面笔记/">← Prev Post</a>
             
             <a class="share-button" data-original-title title>Share this Post</a>
             
