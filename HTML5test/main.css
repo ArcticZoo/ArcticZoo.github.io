@@ -1,0 +1,41 @@
+﻿html,body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+p{
+	font-size: 15vw;
+	color: #fff;
+	margin:0;
+	height: 100vh;
+	line-height: 100vh;
+	text-align: center;
+
+}
+div{
+	width: 100%;
+	height: 100%;
+	transition:all .4s;
+}
+.a {
+	background-color:#ccc;
+	z-index: 4;
+}
+.b {
+	background-color:#aaa;
+	z-index: 3;
+}
+.c {
+	background-color:#888;
+	z-index: 2;
+}
+.d {
+	background-color:#555;
+	z-index: 1;
+}
+.a,.b,.c,.d {
+	position: absolute;
+	top: 0;
+} 
