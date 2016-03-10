@@ -219,7 +219,16 @@
 <li>这个项目中因为会多次对class进行操作，所以写了hasClass addClass removeClass和getClass等原生实现方法<br>getClass是通过获取TagName再遍历取value值进行比对得到的<br>另外几个是通过获取对象后（通过ID或者其他方法）通过className+=“”+clsName增加的，使用的时候先判定有没有（match（reg））class</li>
 <li>开始遇到了个延时的问题，因为showImg函数设置的先后位置不对，导致第一张图片会显示久一些，通过及时刷新showImg解决了这个问题<br>5.关于（function(){}()） 这是一个立即执行的匿名函数 没有函数声明，这种形式在闭包中常用到，和for()连用</li>
 </ol>
-<p>项目展示：<br>task2-1：<a href="http://arcticzoo.github.io/TASK2/1/index.html" target="_blank" rel="external">http://arcticzoo.github.io/TASK2/1/index.html</a><br>task2-2：<a href="http://arcticzoo.github.io/TASK2/2/index.html" target="_blank" rel="external">http://arcticzoo.github.io/TASK2/2/index.html</a><br>task2-3：<a href="http://arcticzoo.github.io/TASK2/3/index.html" target="_blank" rel="external">http://arcticzoo.github.io/TASK2/3/index.html</a><br>task2-4：<br>task2-5：</p>
+<h2 id="TASK2-4"><a href="#TASK2-4" class="headerlink" title="TASK2-4"></a>TASK2-4</h2><p>要求：允许使用鼠标点击选中提示栏中的某个选项<br>允许使用键盘上下键来选中提示栏中的某个选项，回车确认选中<br>选中后，提示内容变更到输入框中 输入a b c弹出提示</p>
+<p>学到的知识点</p>
+<ol>
+<li>对于闭包的新认识。几种使用闭包的方法，通过改bug清楚的知道了for循环绑定事件时不使用闭包产生的后果</li>
+<li>正则表达式里面可以加入变量 用这个方法结合match来筛选符合结果的数据 (“^”+inpval,”i”)</li>
+<li>由于使用的li是后面创建的，所以写在前面的对li进行的事件绑定是无效的，只有等li生成后再绑定事件才有效</li>
+<li>一些细节 比如使用监听是用的keyup 添加innerHTML用的+= 每次进行输入要清除innerHTML </li>
+<li>这次遇到了一个迷之BUG，在循环绑定事件的时候明明用了闭包还是只会返回最后一个。我开始以为是写闭包的姿势不对。看了好久还是解决不了。后来把输出innerHTML的循环和绑定click事件的循环分开写就没有这个问题了…还在思考原因中…</li>
+</ol>
+<p>项目展示：<br>task2-1：<a href="http://arcticzoo.github.io/TASK2/1/index.html" target="_blank" rel="external">http://arcticzoo.github.io/TASK2/1/index.html</a><br>task2-2：<a href="http://arcticzoo.github.io/TASK2/2/index.html" target="_blank" rel="external">http://arcticzoo.github.io/TASK2/2/index.html</a><br>task2-3：<a href="http://arcticzoo.github.io/TASK2/3/index.html" target="_blank" rel="external">http://arcticzoo.github.io/TASK2/3/index.html</a><br>task2-4：<a href="http://arcticzoo.github.io/TASK2/4/index.html" target="_blank" rel="external">http://arcticzoo.github.io/TASK2/4/index.html</a><br>task2-5：</p>
 <p>一句题外话 第一次使用hexo编写博客就踩到了一个隐藏的坑，在md文件的诸如tag：等标记后要加一个空格 没有就会莫名报错…可能是格式规定。</p>
 
         </section>
