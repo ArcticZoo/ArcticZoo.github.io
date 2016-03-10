@@ -1,0 +1,34 @@
+﻿html,ul,li{
+	margin: 0;
+	padding: 0;
+}
+#inp{
+	height: 26px;
+	width: 240px;
+
+}
+#btn{
+	margin-left: 8px;
+	height: 30.5px;
+	width: 70px;
+	background: white;
+	border: 1px solid #999;
+}
+ul{
+	position: absolute;
+	top: 112px;
+	left: 8px;
+}
+li{
+	background: white;
+	list-style: none;
+	width: 244px;
+	height: 26px;
+	line-height: 26px;
+	border:.4px solid #ccc;
+	border-top: 0px;
+}
+li:hover{
+	background: #ccc;
+	color: white;
+}
