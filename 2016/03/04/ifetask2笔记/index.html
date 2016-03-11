@@ -224,9 +224,22 @@
 <ol>
 <li>对于闭包的新认识。几种使用闭包的方法，通过改bug清楚的知道了for循环绑定事件时不使用闭包产生的后果</li>
 <li>正则表达式里面可以加入变量 用这个方法结合match来筛选符合结果的数据 (“^”+inpval,”i”)</li>
-<li>由于使用的li是后面创建的，所以写在前面的对li进行的事件绑定是无效的，只有等li生成后再绑定事件才有效</li>
+<li>由于使用的li是后面创建的，所以写在前面的对li进行的事件绑定是无效的，只有等li生成后再绑定事件才有效<br>（后来我发现类似jquery里有on的方法能实现动态绑定）</li>
 <li>一些细节 比如使用监听是用的keyup 添加innerHTML用的+= 每次进行输入要清除innerHTML </li>
 <li>这次遇到了一个迷之BUG，在循环绑定事件的时候明明用了闭包还是只会返回最后一个。我开始以为是写闭包的姿势不对。看了好久还是解决不了。后来把输出innerHTML的循环和绑定click事件的循环分开写就没有这个问题了…还在思考原因中…</li>
+</ol>
+<h2 id="TASK2-5"><a href="#TASK2-5" class="headerlink" title="TASK2-5"></a>TASK2-5</h2><p>要求：实现一个可拖拽交互的界面<br>如示例图，左右两侧各有一个容器，里面的选项可以通过拖拽来左右移动<br>被选择拖拽的容器在拖拽过程后，在原容器中消失，跟随鼠标移动<br>注意拖拽释放后，要添加到准确的位置<br>拖拽到什么位置认为是可以添加到新容器的规则自己定<br>注意交互中良好的用户体验和使用引导</p>
+<p>这次我写了一个移动端的网页，用了zepto的框架和百度的touch.js库 补了补移动端的重构，屏幕适配方面的知识</p>
+<p>学到的知识点</p>
+<ol>
+<li>移动端的屏幕适配问题。为了统一不同尺寸的效果图，在这次的项目中使用了vh和vw这两个冷门的单位。看网上的很多教程都建议固定根节点的像素值，然后使用ram来适配。同时在JS代码里一开始要获取屏幕的宽度/高度来除以一个固定的值（一般是设计稿的值），然后以这个值为基础设计根节点的像素值。这儿我也使用了类似的思想。<br>var wrapHeight = $(“.wrap”)[0].offsetHeight;<br>var vh = wrapHeight/100; //取得VH的像素值<br>通过这种方法来将JS里的操作都标准化为vh为单位。</li>
+<li>写代码的时候为了练习OOP思想。新建了一个dragAll的类，然后再里面建立方法。和拖动有关的函数都作为方法封装在这个类里。</li>
+<li>for循环内部如果有批量事件绑定需要用到闭包，又碰到了。</li>
+<li>关于zepto的class选择器，要使用[0]之类的才能具体选择到元素（在Jquery里我记到是不需要的）</li>
+<li>遇到了关于绝对坐标的问题。试着用offsetTop的属性来求方块的绝对坐标，失败了，原理是这儿操作方块用的是css3里的transform，相当于全程元素的Top和Left是不变的<br>这儿感觉把事情弄复杂了，每次结束拖动后要把transform归零不说，还得刷新方块的Top和Left值。</li>
+<li>一个奇怪的Bug，关于Z-index的。我把li的z-index设置为99，ul设置为1。结果还是li被压在下面。事后我删掉ul的zindex反而回复正常了。可能是我哪儿没注意到引起的一个BUG。后来值得一提的是，当被drag的方块，我手动把它的z-index设置到了最高。</li>
+<li>一个改了1个小时的BUG。果然改得越久的BUG都是越简单的。<br>用if..else if写了逻辑判断。然而不支持a&lt;b&lt;c这一种判断，后来改为a&lt;b &amp;&amp; b&lt;c就没问题了</li>
+<li>开始准备在松开方块的时候直接判断方块的位置，然后改变位置坐标，后来发现太复杂了，可能性太多，写得也乱，所以用的是显示和内容分开的方法。新建了一个存左边盒子和右边盒子的数组，里面按顺序装class的名字。每次dragend先是判断位置，然后将位置写到数组中。然后接着就是根据数组的内容刷新显示就可以了。</li>
 </ol>
 <p>项目展示：<br>task2-1：<a href="http://arcticzoo.github.io/TASK2/1/index.html" target="_blank" rel="external">http://arcticzoo.github.io/TASK2/1/index.html</a><br>task2-2：<a href="http://arcticzoo.github.io/TASK2/2/index.html" target="_blank" rel="external">http://arcticzoo.github.io/TASK2/2/index.html</a><br>task2-3：<a href="http://arcticzoo.github.io/TASK2/3/index.html" target="_blank" rel="external">http://arcticzoo.github.io/TASK2/3/index.html</a><br>task2-4：<a href="http://arcticzoo.github.io/TASK2/4/index.html" target="_blank" rel="external">http://arcticzoo.github.io/TASK2/4/index.html</a><br>task2-5：</p>
 <p>一句题外话 第一次使用hexo编写博客就踩到了一个隐藏的坑，在md文件的诸如tag：等标记后要加一个空格 没有就会莫名报错…可能是格式规定。</p>
