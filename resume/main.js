@@ -5,8 +5,11 @@ $(document).ready(function(){
 	});
 	$(window).mousemove(function(e){
 		$("#withMe").css("top",e.clientY + "px");
-		console.log(e.clientY);
 	}) //不能使用on来绑定 不知道什么问题 使用on来绑定只会计算鼠标落在元素上的坐标
+	$(window).bind("touchmove",function(ev){
+		var yTouch = ev.originalEvent.changedTouches[0].clientY;
+		$("#withMe").css("top",yTouch + "px");
+	});
 });
 
 var main = {};
