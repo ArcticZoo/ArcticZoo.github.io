@@ -3,9 +3,10 @@ $(document).ready(function(){
 	$(document).on("mousewheel",function(){
 		main.index();
 	});
-	$(window).on("mouseover",function(e){
+	$(window).mousemove(function(e){
 		$("#withMe").css("top",e.clientY + "px");
-	})
+		console.log(e.clientY);
+	}) //不能使用on来绑定 不知道什么问题 使用on来绑定只会计算鼠标落在元素上的坐标
 });
 
 var main = {};
