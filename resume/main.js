@@ -10,6 +10,8 @@ $(document).ready(function(){
 
 var main = {};
 
+var ev = 0;
+
 main.index = function(){
 	var scrollTop = $(document).scrollTop();
 	if(scrollTop<902){
@@ -33,6 +35,7 @@ main.index = function(){
 		$("#index5").addClass("on");
 	}
 }
+
 
 function clearClass(){
 	for(var i=1;i<6;i++){
