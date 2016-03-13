@@ -77,16 +77,36 @@ body{
 	background: #2181e3;
 }
 #right p{
-	color: #101010;
+	position: absolute;
+	left: 94%;
 	text-align: left;
+	color: #101010;
 	font-size: 12px;
 	transform: scale(.75);
 	-moz-transform: scale(.75);
 	-webkit-transform: scale(.75);
-	margin-bottom: 12px;
-	margin-top: -4px;
-	margin-right: -70px;
 }
+#right .p1{
+	top: -4px;
+	width: 100px;
+}
+#right .p2{
+	top: 16px;
+	width: 100px;
+}
+#right .p3{
+	top: 36px;
+	width: 100px;
+}
+#right .p4{
+	top: 56px;
+	width: 100px;
+}
+#right .p5{
+	top: 76px;
+	width: 100px;
+}
+
 
 /*-------------------*/
 
