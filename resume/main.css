@@ -1,0 +1,139 @@
+html,body{
+	margin: 0;
+	padding: 0;
+	color: #101010;
+	height: 100%;
+	width:100%;
+	font-family: "苹方","微软雅黑";
+}
+p,h2,h3{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-image: url(IMG/background.jpg);
+}
+#left{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 25px;
+	background-color: #101010;
+
+}
+#left #withMe{
+	position: fixed;;
+	top: 0;
+	left: 0;
+	height: 1px;
+	width: 25px;
+	background-color: #ddd;
+	transition: all .8s;
+}
+#left img{
+	position: fixed;
+	top: 0;
+	left: 0;
+	max-width: 30px;
+	opacity: .6;
+}
+#right{
+	position: fixed;
+	right: 	12%;
+	top: 40%;
+}
+#right a{
+	font-size: 12px;
+	text-decoration: none;
+	margin-top: 10px;
+	text-align: right;
+}
+#right div{
+	position: absolute;
+	width: 35px;
+	height: 3px;
+	background: #101010;
+	right: 0;
+	transition:all .4s;
+}
+#right #index1{
+	top: 0;
+}
+#right #index2{
+	top: 20px;
+}
+#right #index3{
+	top: 40px;
+}
+#right #index4{
+	top: 60px;
+}
+#right #index5{
+	top: 80px;
+}
+#right .on{
+	width: 60px;
+	background: #2181e3;
+}
+#right p{
+	color: #101010;
+	text-align: left;
+	font-size: 12px;
+	transform: scale(.75);
+	-moz-transform: scale(.75);
+	-webkit-transform: scale(.75);
+	margin-bottom: 12px;
+	margin-top: -4px;
+	margin-right: -70px;
+}
+
+/*-------------------*/
+
+section{
+	width: 60%;
+	margin-left: 80px;
+}
+section h2{
+	font-size: 45px;
+	padding: 60px 0 15px 0;
+}
+section p{
+	font-size: 20px;
+	padding: 8px 0 ;
+}
+.section2,.section3,.section4,.section5,.section6{
+	padding-top: 50px;
+	margin-top: 170px;
+	border-top: .5px solid #333;
+}
+.section2 p,.section3 p,.section4 p,.section5 p,.section6 p{
+	font-size: 16px;
+	line-height: 40px;
+	color: #555;
+}
+.section3{
+	padding-top: 60px;
+}
+.section3 p{
+	padding:2px 12px;
+	display: inline-block;
+	margin-right: 20px;
+	margin-bottom: 30px;
+	height: 40px;
+	border: .8px solid #333;
+	transition: all .5s;
+}
+.section3 p:hover{
+	border: .8px solid #2181e3;
+	color: #2181e3;
+
+
+}
+.section6 a{
+	text-decoration: none;
+	color: #555;
+}
+.section6{
+	margin-bottom: 350px;
+}
