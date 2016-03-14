@@ -1,20 +1,32 @@
-
-//初始化地图
-    var map = new BMap.Map("allmap",{minZoom:18,maxZoom:19});
+$(document).ready(function(){
+    //初始化地图
+	var map = new BMap.Map("allmap",{minZoom:18,maxZoom:19});
     	map.centerAndZoom(new BMap.Point(106.613922,29.53832),18); 
     	map.enableScrollWheelZoom(true);
 
+    map.addControl(new BMap.MapTypeControl()); //添加地图类型控件
 
-    var b = new BMap.Bounds(new BMap.Point(106.603922,29.52832),new BMap.Point(106.623922,29.54832));
+	mapApp.out(map);
+    mapApp.mark(map);
+	map.addEventListener("click", function(e){
+        $("txtGeoLng").value=e.point.lng;
+        $("txtGeoLat").value=e.point.lat;
+        console.log("当前位置：" + e.point.lng + ", " + e.point.lat);
+    });         
+})
+
+var mapApp = {};
+
+//越界
+mapApp.out = function(map){
+	var b = new BMap.Bounds(new BMap.Point(106.603922,29.52832),new BMap.Point(106.623922,29.54832));
     	try {	
     		BMapLib.AreaRestriction.setBounds(map, b);
-    	} catch (e) {
-    		
-    	} 
-
-    map.addControl(new BMap.MapTypeControl());          //添加地图类型控件
-
-//创建樱花标注
+    	} catch (e) {} 
+}
+    
+mapApp.mark = function(map){
+	//创建樱花标注
     var pt = [];
     var marker = [];
 	    pt[0] = new BMap.Point(106.613662, 29.54094);
@@ -31,8 +43,9 @@
 		marker[i] = new BMap.Marker(pt[i],{icon:myIcon});  // 创建标注
 	    map.addOverlay(marker[i]); //添加
 	}
-     
+} 
 
+ 
 //定位服务
 /*
 var geolocation = new BMap.Geolocation();
@@ -49,8 +62,4 @@ var geolocation = new BMap.Geolocation();
 	},{enableHighAccuracy: true})
 	*/
 
-	map.addEventListener("click", function(e){
-        $("txtGeoLng").value=e.point.lng;
-        $("txtGeoLat").value=e.point.lat;
-        console.log("当前位置：" + e.point.lng + ", " + e.point.lat);
-    });
+	
