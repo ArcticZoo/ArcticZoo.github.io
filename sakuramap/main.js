@@ -29,17 +29,18 @@ mapApp.mark = function(map){
 	//创建樱花标注
     var pt = [];
     var marker = [];
-	    pt[0] = new BMap.Point(106.613662, 29.54094);
+	    pt[0] = new BMap.Point(106.613671, 29.540932);
 	    pt[1] = new BMap.Point(106.612673, 29.539235);
-	    pt[2] = new BMap.Point(106.614057, 29.540935);
-	    pt[3] = new BMap.Point(106.613648, 29.540625);//三教门口的樱花
-        pt[4] = new BMap.Point(106.612063, 29.539581);
-	    pt[5] = new BMap.Point(106.612853, 29.539573);
-	    pt[6] = new BMap.Point(106.614479, 29.540963);//樱花园的樱花
-	    pt[7] = new BMap.Point(106.616154, 29.537546);//15栋的樱花
+	    pt[2] = new BMap.Point(106.613671, 29.54028);//三教门口的樱花
+        pt[3] = new BMap.Point(106.612063, 29.539581);
+	    pt[4] = new BMap.Point(106.612853, 29.539573);
+	    pt[5] = new BMap.Point(106.614479, 29.540963);//樱花园的樱花
+	    pt[6] = new BMap.Point(106.616154, 29.537546);//15栋的樱花
+	    pt[7] = new BMap.Point(106.613221, 29.536046);
+	    pt[8] = new BMap.Point(106.611865, 29.536336);
 	    //樱花的点
 	var myIcon = new BMap.Icon("sakura.png", new BMap.Size(50,50));
-	for(var i=0;i<8;i++){
+	for(var i=0;i<9;i++){
 		marker[i] = new BMap.Marker(pt[i],{icon:myIcon});  // 创建标注
 	    map.addOverlay(marker[i]); //添加
 	}
