@@ -219,7 +219,18 @@
 <li>calc()属性。能让浏览器自动计算像素（比如宽度），缺点是很多手机浏览器不支持<br>该属性功能相近的是box-sizing.都是用在需要浏览器来动态计算大小的时候用。</li>
 <li>为了实现不同盒子之间20px的间距（padding），但又要使用box-sizing来计算盒子子的宽，所以每个盒子都由一个div包裹，box-sizing加在div上，颜色是加在盒子上的。</li>
 <li>对row（行）设置负的margin来抵消之前对column设置的padding对两边的影响</li>
-<li>before和after两个伪类 与清除浮动的结合应用。阅读了 那些年我们一起清除过的浮动 感觉对清除浮动的认识又加深了。</li>
+</ol>
+<p>随便还复习了一下清除浮动的几种方法（多在写横向nav时会用到）</p>
+<ol>
+<li>overflow：over 比较方便简单，缺点是内容过多时会让多的内容被隐藏掉</li>
+<li>在需要清除浮动的元素里加个div 结构如下<br> <div><pre><code>&lt;ul style=&quot;float:left&quot;&gt;
+     &lt;li&gt;&lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+     &lt;li&gt;&lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+     &lt;li&gt;&lt;a href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;
+</code></pre></div><br>对其clear：both 缺点是需要多一个div 会破坏html结构</li>
+<li>.clearfix:after{content:”.”;display:block;height:0;clear:both;visibility:hidden}<br>.clearfix{*+height:1%;}<br>方法来实现清除浮动，比较完美的一种方法。<br>实现的原理可以从方法2中得到启示。相当于是模拟了一个有clear：both属性的div</li>
 </ol>
 
         </section>
