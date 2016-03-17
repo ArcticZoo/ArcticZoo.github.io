@@ -1,19 +1,21 @@
 $(document).ready(function(){
-	$("#logo").fadeOut(800);
+	$("#logo").fadeOut(300);
     //初始化地图
     var mapApp = new MAPAPP();
 	var map = new BMap.Map("allmap",{minZoom:18,maxZoom:19});
     	map.centerAndZoom(new BMap.Point(106.613922,29.53832),18); 
     	map.enableScrollWheelZoom(true);
-
+    
     map.addControl(new BMap.MapTypeControl()); //添加地图类型控件
-
+    map.addControl(new BMap.GeolocationControl());
+   
     mapApp.mark(map);
 	map.addEventListener("click", function(e){
         $("txtGeoLng").value=e.point.lng;
         $("txtGeoLat").value=e.point.lat;
         console.log("当前位置：" + e.point.lng + ", " + e.point.lat);
-    });         
+    });       
+  
 })
 
 
@@ -40,10 +42,13 @@ function MAPAPP(map){
 	        pt[6] = new BMap.Point(106.616154, 29.537546);//15栋的樱花
 	        pt[7] = new BMap.Point(106.613221, 29.536046);
 	        pt[8] = new BMap.Point(106.611865, 29.536336);
-	        pt[8] = new BMap.Point(106.614284, 29.537472);
+	        pt[9] = new BMap.Point(106.614284, 29.537472);
+	        pt[10] = new BMap.Point(106.611557, 29.536639);
+	        pt[11] = new BMap.Point(106.618355, 29.538128);
+
 	        //樱花的点
 	    var myIcon = new BMap.Icon("sakura.png", new BMap.Size(50,50));
-	    for(var i=0;i<9;i++){
+	    for(var i=0;i<12;i++){
 	    	marker[i] = new BMap.Marker(pt[i],{icon:myIcon});  // 创建标注
 	        map.addOverlay(marker[i]); //添加
 	    }
@@ -63,6 +68,6 @@ function MAPAPP(map){
     	},{enableHighAccuracy: true})
 	}
 }
-    
+
 
 	
