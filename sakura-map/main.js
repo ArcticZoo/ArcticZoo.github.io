@@ -2,36 +2,34 @@ $(document).ready(function(){
 	$("#logo").css("display","none");
 	$("#detail").css("display","block");
     //初始化地图
-    var onMap = 1;
+    var map = new BMap.Map("allmap",{minZoom:17,maxZoom:19});
+        	map.centerAndZoom(new BMap.Point(106.613922,29.53832),18); 
+        	map.enableScrollWheelZoom(true);
+        
     var mapApp = new MAPAPP();
-	var map = new BMap.Map("allmap",{minZoom:17,maxZoom:19});
-    	map.centerAndZoom(new BMap.Point(106.613922,29.53832),18); 
-    	map.enableScrollWheelZoom(true);
-    
-    map.addControl(new BMap.MapTypeControl()); //添加地图类型控件
-    map.addControl(new BMap.GeolocationControl());
-   
+    mapApp.init(map);
     mapApp.mark(map);
+    mapApp.bind(map);
+
+    /*
 	map.addEventListener("click", function(e){
         $("txtGeoLng").value=e.point.lng;
         $("txtGeoLat").value=e.point.lat;
         console.log("当前位置：" + e.point.lng + ", " + e.point.lat);
-    });       
+    });       */
     
-        $("#about").on("click",function(){
-        	$("#detail").css("left","0vw");
-        	$("#about").css("opacity","0");
-        });
-    	map.addEventListener("click",function(){
-        	$("#detail").css("left","-85vw");
-        	$("#about").css("opacity",".6");
-        });
+   
+    
 
 })
 
 
 //构造函数
 function MAPAPP(map){
+	this.init = function(map){
+        map.addControl(new BMap.MapTypeControl()); //添加地图类型控件
+        map.addControl(new BMap.GeolocationControl());
+	}
 	//越界
 	this.out = function(){
 		var b = new BMap.Bounds(new BMap.Point(106.603922,29.52832),new BMap.Point(106.623922,29.54832));
@@ -78,6 +76,20 @@ function MAPAPP(map){
 	    		alert("未获取到您的地址信息，请打开GPS。");
 	    	}        
     	},{enableHighAccuracy: true})
+	}
+	this.bind = function(map){
+    	$(".back").on("click",function(){
+        	$("#detail").css("left","-85vw");
+        	$("#about").css("opacity",".6");
+        });
+        $("#about").on("click",function(){
+        	$("#detail").css("left","0vw");
+        	$("#about").css("opacity","0");
+        });
+        map.addEventListener("click",function(){
+        	$("#detail").css("left","-85vw");
+        	$("#about").css("opacity",".6");
+        });
 	}
 
 }

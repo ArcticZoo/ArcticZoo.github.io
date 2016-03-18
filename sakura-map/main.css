@@ -62,6 +62,13 @@ html,body{
 	text-align: center;
 	display: none;
 }
+#detail img{
+	max-width: 21px;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	opacity: .4;
+}
 #detail h3{
 	padding-top: 30px;
 	color: #555;
