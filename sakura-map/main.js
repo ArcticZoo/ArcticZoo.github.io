@@ -59,7 +59,7 @@ function MAPAPP(map){
 	        pt[12] = new BMap.Point(106.614037, 29.536244);
 
 	        //樱花的点
-	    var myIcon = new BMap.Icon("sakura.png", new BMap.Size(50,50));
+	    var myIcon = new BMap.Icon("sakuram.gif", new BMap.Size(40,40));
 	    for(var i=0;i<13;i++){
 	    	marker[i] = new BMap.Marker(pt[i],{icon:myIcon});  // 创建标注
 	        map.addOverlay(marker[i]); //添加
