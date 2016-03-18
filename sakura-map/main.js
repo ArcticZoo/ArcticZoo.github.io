@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	$("#logo").css("display","none");
+	$("#detail").css("display","block");
     //初始化地图
     var onMap = 1;
     var mapApp = new MAPAPP();

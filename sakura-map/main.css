@@ -16,6 +16,7 @@ html,body{
 	width: 100%;
 	background: #ddd;
     z-index: 999;
+    -webkit-transition: all .5s;
     transition: all .5s;
 }
 #logo img{
@@ -33,6 +34,7 @@ html,body{
     top: 10px;
 	z-index: 996;
     opacity: .6;
+    -webkit-transition: all .2s;
     transition: all .2s;
 
 }
@@ -51,12 +53,14 @@ html,body{
 	width: 85vw;
 	background: #fff;
 	overflow-y:scroll;
+	-webkit-transition: all .4s;
 	transition: all .4s;
 	height: 100%;
 
 }
 #detail{
 	text-align: center;
+	display: none;
 }
 #detail h3{
 	padding-top: 30px;
