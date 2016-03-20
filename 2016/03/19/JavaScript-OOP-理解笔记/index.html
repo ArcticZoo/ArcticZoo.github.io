@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>移动端HTML5页面笔记 | Arctic/Zoo</title>
+  <title>JavaScript-OOP相关-笔记 | Arctic/Zoo</title>
   <meta name="description" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -169,7 +169,7 @@
                 
                 <div id="nav-container">
                     <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#">移动端HTML5页面笔记</a></li>
+                        <li id="navbar-title"><a href="#">JavaScript-OOP相关-笔记</a></li>
                         <li id="navbar-toc" style="border-left: none">
                             <a style="padding-right: 15px">
                                 <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
@@ -202,38 +202,136 @@
                       
                       <a data-pjax href='/tags/前端/' style='color:#D5D5D5'>前端</a>
                       
-                      <a data-pjax href='/tags/移动端/' style='color:#D5D5D5'>移动端</a>
-                      
                       <a data-pjax href='/tags/笔记/' style='color:#D5D5D5'>笔记</a>
                       
                       
                   </div>
-                <h1 class="post-title" style="margin: 14px 0;color:#50585D">移动端HTML5页面笔记</h1>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">JavaScript-OOP相关-笔记</h1>
 
                     <div class="post-meta">
                         Post on<span class="fa fa-clock-o"></span>
-                        <time datetime="2016-03-08T15:59:41.000Z"
-                              itemprop="datePublished">2016-03-08</time>
+                        <time datetime="2016-03-19T11:24:00.000Z"
+                              itemprop="datePublished">2016-03-19</time>
                     </div>
     </span>
 
         <section class="post-content">
-            <p>最近在尝试移动端HTML5页面搭建，主要是对触摸事件的处理，这里找到了百度的一个touch.js的轻便的库。试用了一下，没遇到什么坑，感觉还是挺方便的。框架方面使用的是zepto。<br>花了一天的事件做了一个HTML5广告里常见的触屏滑动页面的效果，熟悉了一下移动端的一些事件，复习了一下css重构时的特别的一些写法。</p>
-<ol>
-<li>动画用了css3的动画 一个是transition，这个开始设置的是none，因为拖动的时候不需要缓动，在释放拖动的时候才需要动画，所以在js里用style.transition重新设置了动画 在下一个页面开始前要清除动画。另外一个是transform：transform3d( , , );来操作元素的位置（其实只用top就行了）</li>
-<li>为了控制页面的高度跟随触摸的手势，使用了封装好的touch事件，当被drag时取得y坐标，储存了一个相对坐标和绝对坐标。这儿容易犯错的是因为要让拖动值不足一定值的时候让绝对坐标回到0，进行复位。</li>
+            <h2 id="对象的创建方法"><a href="#对象的创建方法" class="headerlink" title="对象的创建方法"></a>对象的创建方法</h2><p>第一种是对象字面量的形式</p>
+<pre><code>person = {......}
+</code></pre><p>第二种是构造函数的方式</p>
+<pre><code>function Person(name, age){ 
+
+//当调用new Person的时候，在执行第一行代码前，先生成一个Person对象，并将对象在内存中的 
+//索引赋值给this关键字，此时可以通过this关键字操作新生成的对象，如下面的添加属性或方法 
+
+this.name = name; //this关键字不能少。为当前对象，即this关键字引用的对象的name属性赋值 
+//，实际相当于为当前对象添加name属性后,再为其name属性赋值。 
+this.age = age; 
+
+this.showName = function(){ 
+alert(this.name); 
+} 
+this.showAge = function(){ 
+alert(this.age); 
+} 
+} 
+
+var obj1 = new Person(&quot;Koji&quot;, 22); //生成一个Person对象 
+var obj2 = new Person(&quot;Luo&quot;, 21);
+</code></pre><p>这种方式的缺点是，每次new的时候都会创造一个新的方法，浪费内存。</p>
+<p>第三种方法是原型方法</p>
+<pre><code>function Person(){} //定义一个空构造函数，且不能传递参数 
+
+//将所有的属性的方法都赋予prototype属性 
+
+Person.prototype.name = &quot;Koji&quot;; //添加属性 
+Person.prototype.age = 22; 
+
+Person.prototype.showName = function(){ //添加方法 
+alert(this.name); 
+} 
+
+Person.prototype.showAge = function(){ 
+alert(this.age); 
+} 
+
+var obj1 = new Person(); //生成一个Person对象 
+var obj2 = new Person();
+</code></pre><p>缺点是上面的代码通过obj1向obj1的属性array添加元素的时候，obj2的arra属性的元素也跟着受到影响，原因就在于obj1和obj2对象的array属性引用的是同一个Array对象，那么改变这个Array，对象，另一引用该Array对象的属性自然也会受到影响 </p>
+<p>第四种是混合方法，混合了原型和构造函数方法 </p>
+<pre><code>function Person(name, age) { 
+this.name = name; 
+this.age = age; 
+this.array = new Array(&quot;Koji&quot;, &quot;Luo&quot;); 
+} 
+
+Person.prototype.showName = function() { 
+alert(this.name); 
+} 
+
+Person.prototype.showArray = function() { 
+alert(this.array); 
+} 
+
+var obj1 = new Person(&quot;Koji&quot;, 22); //生成一个Person对象 
+var obj2 = new Person(&quot;Luo&quot;, 21); 
+
+obj1.array.push(&quot;Kyo&quot;); //向obj1的array属性添加一个元素 
+
+obj1.showArray(); //Koji,Luo,Kyo 
+obj1.showName(); //Koji 
+obj2.showArray(); //Koji,Luo 
+obj2.showName(); //Luo
+</code></pre><p>这样，不仅不同实例之间属性是私有的，方法是共享的<br>这种方法是最常用的</p>
+<p>还有一种方法是使用Object.create() 新特性，优点是直观，能直接创造一个具有指定原型的对象，缺点是有一些浏览器不支持</p>
+<h2 id="apply和call"><a href="#apply和call" class="headerlink" title="apply和call"></a>apply和call</h2><p>改变this的上下文用。也用于对象的（属性）继承。<br>将括号内部的对象的this指向外部的那个对象。</p>
+<h2 id="判断数据类型的几种形式"><a href="#判断数据类型的几种形式" class="headerlink" title="判断数据类型的几种形式"></a>判断数据类型的几种形式</h2><ol>
+<li>toString.call 准确判断数据类型：Array、String、Object、RegExp、Number、Undefined、Null、Date、Boolean、Function</li>
+<li>typeof 粗略判断数据类型：undefined、number、string、boolean、object、function</li>
+<li>instanceOf 判断一个函数是否为另一个函数的实例。</li>
 </ol>
-<p>练习的地址在这儿，有空准备临摹一个完整的HTML5广告再练练手。<br><a href="http://arcticzoo.github.io/HTML5test/test.html" target="_blank" rel="external">http://arcticzoo.github.io/HTML5test/test.html</a></p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ol>
+<li>对象冒充的方法继承，一般用call/apply 来继承对象的属性 不继承方法是因为每继承一次会在内存中新建一个方法</li>
+<li>原型链继承，用来继承对象的方法和属性。缺点是实例化子类时不能将参数传给父类</li>
+<li>混合继承 成员变量采用对象冒充方式，成员方法采用原型链方式</li>
+<li>object.create（） 新标准 唯一缺点是兼容性</li>
+</ol>
+<h2 id="变量提升和函数提升"><a href="#变量提升和函数提升" class="headerlink" title="变量提升和函数提升"></a>变量提升和函数提升</h2><p>js中会默认把定义变量这个行为提升到函数顶部<br>如果是下面这一段代码 会返回 undefined</p>
+<pre><code>var v=&apos;Hello World&apos;; 
+(function(){ 
+alert(v); 
+var v=&apos;I love you&apos;; 
+})()
+</code></pre><p>原因是程序将var v提升到了alert（v）之上<br>这也是js书写规范中建议将对变量的定义提到顶部的原因，防止出错。</p>
+<p>另外，js也有函数提升这一特性，但是只限函数声明，函数表达式是没有用的<br>如下，第一段代码成功执行，而第二段不行</p>
+<pre><code>function myTest(){ 
+foo(); 
+function foo(){ 
+alert(&quot;我来自 foo&quot;); 
+} 
+} 
+myTest();
+</code></pre><pre><code>function myTest(){ 
+foo(); 
+var foo =function foo(){ 
+alert(&quot;我来自 foo&quot;); 
+} 
+} 
+myTest();
+</code></pre><h2 id="一些比较容易被遗忘的很好用的知识点"><a href="#一些比较容易被遗忘的很好用的知识点" class="headerlink" title="一些比较容易被遗忘的很好用的知识点"></a>一些比较容易被遗忘的很好用的知识点</h2><ol>
+<li>map()</li>
+<li></li>
+</ol>
 
         </section>
         <hr/>
         <nav class="pagination" style="width:auto" role="pagination">
             
-            <a data-pjax class="newer-posts" href="/2016/03/15/2016ife笔记/">← Prev Post</a>
+            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
             
             <a class="share-button" data-original-title title>Share this Post</a>
             
-            <a data-pjax class="older-posts" href="/2016/03/04/ifetask2笔记/">Next Post →</a>
+            <a data-pjax class="older-posts" href="/2016/03/15/2016ife笔记/">Next Post →</a>
             
         </nav>
         <br/>
