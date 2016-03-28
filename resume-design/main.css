@@ -152,7 +152,7 @@ section p{
 .section2,.section3,.section4,.section5,.section6{
 	padding-top: 50px;
 	margin-top: 170px;
-	border-top: .5px solid #333;
+	border-top: .5px solid #aaa;
 }
 .section2 p,.section3 p,.section4 p,.section5 p,.section6 p{
 	font-size: 16px;
@@ -230,7 +230,7 @@ section p{
 	    max-height: 130px;
     }
     .section2,.section3,.section4,.section5,.section6{
-	    border-top: .9px solid #333;
+	    border-top: .9px solid #aaa;
     }
     .section2 p,.section3 p,.section4 p,.section5 p,.section6 p{
 	    font-size: 15px;
