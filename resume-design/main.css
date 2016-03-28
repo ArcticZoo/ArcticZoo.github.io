@@ -1,0 +1,225 @@
+html,body{
+	margin: 0;
+	padding: 0;
+	color: #101010;
+	height: 100%;
+	width:100%;
+	font-family: "苹方","微软雅黑";
+}
+p,h2,h3{
+	margin: 0;
+	padding: 0;
+}
+body{
+	/*background-image: url(IMG/background.jpg);*/
+	background-color: #fafafa;
+}
+#left{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 25px;
+	background-color: #101010;
+
+}
+#left #withMe{
+	position: fixed;;
+	top: 0;
+	left: 0;
+	height: 1px;
+	width: 25px;
+	background-color: #ddd;
+	transition: all .2s;
+}
+#left img{
+	position: fixed;
+	top: 0;
+	left: 0;
+	max-width: 30px;
+	opacity: .6;
+}
+#right{
+	position: fixed;
+	right: 	12%;
+	top: 40%;
+}
+#right a{
+	font-size: 12px;
+	text-decoration: none;
+	margin-top: 10px;
+	text-align: right;
+}
+#right div{
+	position: absolute;
+	width: 35px;
+	height: 3px;
+	background: #101010;
+	right: 0;
+	transition:all .4s;
+}
+#right #index1{
+	top: 0;
+}
+#right #index2{
+	top: 20px;
+}
+#right #index3{
+	top: 40px;
+}
+#right #index4{
+	top: 60px;
+}
+#right #index5{
+	top: 80px;
+}
+#right .on{
+	width: 60px;
+	background: #2181e3;
+}
+#right p{
+	position: absolute;
+	left: 94%;
+	text-align: left;
+	color: #101010;
+	font-size: 12px;
+	transform: scale(.75);
+	-moz-transform: scale(.75);
+	-webkit-transform: scale(.75);
+}
+#right .p1{
+	top: -5.1px;
+	width: 100px;
+}
+#right .p2{
+	top: 14.9px;
+	width: 100px;
+}
+#right .p3{
+	top: 34.9px;
+	width: 100px;
+}
+#right .p4{
+	top: 54.9px;
+	width: 100px;
+}
+#right .p5{
+	top: 74.9px;
+	width: 100px;
+}
+.phoneNav{
+	display: none;
+}
+
+
+/*-------------------*/
+
+section{
+	width: 60%;
+	margin-left: 80px;
+}
+section img{
+	padding-top: 40px;
+	max-height: 170px;
+}
+section h2{
+	font-size: 45px;
+	padding: 60px 0 15px 0;
+}
+section p{
+	font-size: 20px;
+	padding: 8px 0 ;
+}
+.section2,.section3,.section4,.section5,.section6{
+	padding-top: 50px;
+	margin-top: 170px;
+	border-top: .5px solid #333;
+}
+.section2 p,.section3 p,.section4 p,.section5 p,.section6 p{
+	font-size: 16px;
+	line-height: 40px;
+	color: #555;
+}
+.section3{
+	padding-top: 60px;
+}
+.section3 p{
+	padding:0px 16px;
+	display: inline-block;
+	margin-right: 20px;
+	margin-bottom: 35px;
+	height: 40px;
+	border: .8px solid #333;
+	transition: all .5s;
+}
+.section3 p:hover{
+	border: .8px solid #5db1ff;
+	color: #5db1ff;
+
+
+}
+.section6 a{
+	text-decoration: none;
+	color: #555;
+}
+
+.section6 img{
+	margin-top: 270px;
+	margin-left: -5px;
+	max-width: 160px;
+}
+
+/*-----------------*/
+
+@media (max-width:600px){
+	#right{
+		display: none;
+	}
+	.phoneNav{
+		display: none;
+		color: #ccc;
+	}
+    .phoneNav .phone1{
+    	position: fixed;
+    	display: inline-block;
+    	font-size: 20px;
+    	bottom: 9%;
+    	right: -7%;
+    	transform: rotate(90deg);
+    }
+    .phoneNav .phone2{
+    	display: none;
+    }
+    .phoneNav .phone3{
+    	display: none;
+    }
+    .phoneNav .phone4{
+    	display: none;
+    }
+    .phoneNav .phone5{
+    	display: none;
+    }	
+	section{
+	    width: 75%;
+	    margin-left: 60px;
+    }
+    section p{
+	    font-size: 16px;
+    }
+    .section2,.section3,.section4,.section5,.section6{
+	    border-top: .9px solid #333;
+    }
+    .section2 p,.section3 p,.section4 p,.section5 p,.section6 p{
+	    font-size: 15px;
+	    line-height: 40px;
+    }
+    .section3 .wrapS3{
+    	text-align: center;
+    	width: 90%;
+    	margin:0 auto;
+    }
+    .section3 p{
+    	font-size: 14px;
+    }
+
+}
