@@ -1,8 +1,24 @@
 $(document).ready(function(){
+	//初始化右边index 再绑定一些其他的事件
 	main.index();
+    main.bindUI();
+    //如果是火狐大爷的话
+    if (navigator.userAgent.indexOf('Firefox') >= 0){
+	    $("#top").css("display","block");
+	    $("#top").on("click",function(){
+	    	this.style.opacity = 0;
+	    })
+    }
+
+	//监听滚动事件
+	$(document).on("DOMMouseScroll",function(){
+		main.index();
+	}); //兼容火狐大爷
 	$(document).on("mousewheel",function(){
 		main.index();
 	});
+
+	//监听鼠标移动
 	$(window).mousemove(function(e){
 		$("#withMe").css("top",e.clientY + "px");
 	}) //不能使用on来绑定 不知道什么问题 使用on来绑定只会计算鼠标落在元素上的坐标
@@ -44,6 +60,21 @@ main.index = function(){
 main.touchShow = function(ev){
 	var yShow = ev.originalEvent.changedTouches[0].pageY;
 	console.log(yShow);
+}
+
+main.bindUI = function(){
+	$(".section3 p").on("mousemove",function(){
+		console.log("1");
+		this.style.border=".8px solid #5db1ff";
+	    this.style.color="#5db1ff";
+	})
+	$("html").on("click",function(){
+		console.log("1");
+		for(var i=0;i<$(".section3 p").length;i++){
+			$(".section3 p")[i].style.color="#888";
+	     	$(".section3 p")[i].style.border=".8px solid #888";
+		}
+	})
 }
 
 

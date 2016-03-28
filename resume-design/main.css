@@ -14,6 +14,23 @@ body{
 	/*background-image: url(IMG/background.jpg);*/
 	background-color: #fafafa;
 }
+#top{
+	background:#111;
+	opacity: .8;
+	position: fixed;
+	top: 0;
+	height: 20px;
+	width: 100%;
+	line-height: 20px;
+	display: none;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+#top p{
+	text-align: center;
+	color: #eee;
+	font-size: 12px;
+}
 #left{
 	position: fixed;
 	top: 0;
@@ -30,6 +47,7 @@ body{
 	height: 1px;
 	width: 25px;
 	background-color: #ddd;
+	-webkit-transition: all .2s;
 	transition: all .2s;
 }
 #left img{
@@ -56,6 +74,7 @@ body{
 	height: 3px;
 	background: #101010;
 	right: 0;
+	-webkit-transition:all .4s;
 	transition:all .4s;
 }
 #right #index1{
@@ -150,6 +169,7 @@ section p{
 	margin-bottom: 35px;
 	height: 40px;
 	border: .8px solid #333;
+	-webkit-transition: all .5s;
 	transition: all .5s;
 }
 .section3 p:hover{
@@ -205,6 +225,9 @@ section p{
     }
     section p{
 	    font-size: 16px;
+    }
+    section img{
+	    max-height: 130px;
     }
     .section2,.section3,.section4,.section5,.section6{
 	    border-top: .9px solid #333;
