@@ -1,4 +1,4 @@
-$(document).ready(function(){
+window.onload = function(){
 	//初始化 再绑定一些其他的事件
 	main.initshow();
 	main.index();
