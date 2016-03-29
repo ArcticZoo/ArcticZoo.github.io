@@ -1,9 +1,9 @@
 $(document).ready(function(){
-	//初始化右边index 再绑定一些其他的事件
+	//初始化 再绑定一些其他的事件
+	main.initshow();
 	main.index();
     main.bindUI();
-    //初始化显示
-    main.initshow();
+    
     //如果是火狐大爷的话
     if (navigator.userAgent.indexOf('Firefox') >= 0){
 	    $("#top").css("display","block");
