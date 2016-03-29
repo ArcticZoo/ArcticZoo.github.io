@@ -31,7 +31,7 @@ window.onload = function(){
 		$("#withMe").css("top",yTouch + "px");
 		main.touchShow(ev);
 	});
-});
+};
 
 var main = {};
 
