@@ -12,7 +12,7 @@ p,h2,h3{
 }
 body{
 	/*background-image: url(IMG/background.jpg);*/
-	background-color: #fafafa;
+	background-color: #fdfdfd;
 }
 #top{
 	background:#111;
@@ -61,6 +61,9 @@ body{
 	position: fixed;
 	right: 	12%;
 	top: 40%;
+	opacity: 0;
+	-webkit-transition:all .4s;
+	transition:all .4s;
 }
 #right a{
 	font-size: 12px;
@@ -138,12 +141,18 @@ section{
 	margin-left: 80px;
 }
 section img{
-	padding-top: 40px;
-	max-height: 170px;
+	padding-top: 24.6vh;
+	margin-left: -40px;
+	max-height: 400px;
+	padding-bottom: 80px;
+	-webkit-transition: all .6s;
+	transition: all .6s;
+	opacity: 0;
 }
-section h2{
-	font-size: 45px;
-	padding: 60px 0 15px 0;
+#main{
+	width: 90%;
+	text-align: center;
+	overflow: hidden;
 }
 section p{
 	font-size: 20px;
@@ -186,7 +195,9 @@ section p{
 .section6 img{
 	margin-top: 270px;
 	margin-left: -5px;
+	margin-bottom: -70px;
 	max-width: 160px;
+	opacity: 1;
 }
 
 /*-----------------*/
@@ -227,7 +238,11 @@ section p{
 	    font-size: 16px;
     }
     section img{
-	    max-height: 130px;
+	    max-height: 300px;
+	    margin-left: -50px;
+    }
+    #main{
+    	overflow: hidden;
     }
     .section2,.section3,.section4,.section5,.section6{
 	    border-top: .9px solid #aaa;

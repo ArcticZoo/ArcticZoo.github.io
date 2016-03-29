@@ -2,6 +2,8 @@ $(document).ready(function(){
 	//初始化右边index 再绑定一些其他的事件
 	main.index();
     main.bindUI();
+    //初始化显示
+    main.initshow();
     //如果是火狐大爷的话
     if (navigator.userAgent.indexOf('Firefox') >= 0){
 	    $("#top").css("display","block");
@@ -17,7 +19,9 @@ $(document).ready(function(){
 	$(document).on("mousewheel",function(){
 		main.index();
 	});
-
+    $(window).bind("touchmove",function(){
+    	main.index();
+    });
 	//监听鼠标移动
 	$(window).mousemove(function(e){
 		$("#withMe").css("top",e.clientY + "px");
@@ -35,25 +39,30 @@ var ev = 0;
 
 main.index = function(){
 	var scrollTop = $(document).scrollTop();
-	if(scrollTop<902){
+	if(scrollTop<1422){
 		clearClass();
 		$("#index1").addClass("on");
 	}
-	else if(902<scrollTop && scrollTop<1330){
+	else if(1422<scrollTop && scrollTop<1850){
 		clearClass();
 		$("#index2").addClass("on");
 	}
-	else if(1330<scrollTop && scrollTop<2273){
+	else if(1850<scrollTop && scrollTop<2993){
 		clearClass();
 		$("#index3").addClass("on");
 	}
-	else if(2273<scrollTop && scrollTop<2825){
+	else if(2993<scrollTop && scrollTop<3445){
 		clearClass();
 		$("#index4").addClass("on");
 	}
-	else if(2825<scrollTop){
+	else if(3445<scrollTop){
 		clearClass();
 		$("#index5").addClass("on");
+	}
+	if(scrollTop>400){
+		$("#right").css("opacity","1");
+	}else if(scrollTop<400){
+		$("#right").css("opacity","0");
 	}
 }
 
@@ -75,8 +84,14 @@ main.bindUI = function(){
 	     	$(".section3 p")[i].style.border=".8px solid #888";
 		}
 	})
+	$()
 }
 
+main.initshow = function(){
+	$("#main img").css("opacity","1");
+	$("#main img").css("paddingTop","23vh");
+
+}
 
 function clearClass(){
 	for(var i=1;i<6;i++){
@@ -89,24 +104,25 @@ function goTo(number){
 		$("body").animate({scrollTop:"0px"},300);
 		clearClass();
 		$("#index1").addClass("on");
+		$("#right").css("opacity","0");
 	}
 	else if(number==3){
-		$("body").animate({scrollTop:"903px"},300);
+		$("body").animate({scrollTop:"1422px"},300);
 		clearClass();
 		$("#index2").addClass("on");
 	}
 	else if(number==4){
-		$("body").animate({scrollTop:"1331px"},300);
+		$("body").animate({scrollTop:"1850px"},300);
 		clearClass();
 		$("#index3").addClass("on");
 	}
 	else if(number==5){
-		$("body").animate({scrollTop:"2274px"},300);
+		$("body").animate({scrollTop:"2893px"},300);
 		clearClass();
 		$("#index4").addClass("on");
 	}
 	else if(number==6){
-		$("body").animate({scrollTop:"2826px"},300);
+		$("body").animate({scrollTop:"3445px"},300);
 		clearClass();
 		$("#index5").addClass("on");
 	}
