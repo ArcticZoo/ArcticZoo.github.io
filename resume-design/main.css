@@ -14,6 +14,22 @@ body{
 	/*background-image: url(IMG/background.jpg);*/
 	background-color: #fdfdfd;
 }
+#load{
+	width: 100%;
+	height:100%;
+	overflow: hidden;
+	background: #eee;
+	position: fixed;
+	z-index: 9999;
+}
+#load p{
+	color: #666;
+	font-size: 12px;
+	height:12px;
+	width: 70px;
+	margin:0 auto;
+	line-height: 100vh;
+}
 #top{
 	background:#111;
 	opacity: .8;
@@ -49,6 +65,7 @@ body{
 	background-color: #ddd;
 	-webkit-transition: all .2s;
 	transition: all .2s;
+	z-index: 999;
 }
 #left img{
 	position: fixed;

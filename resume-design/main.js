@@ -88,8 +88,15 @@ main.bindUI = function(){
 }
 
 main.initshow = function(){
-	$("#main img").css("opacity","1");
-	$("#main img").css("paddingTop","23vh");
+	setTimeout(function(){
+		$("#load").css("opacity","0");
+	    $("#main img").css("opacity","1");
+	    $("#main img").css("paddingTop","23vh");
+	},200);
+	setTimeout(function(){
+		$("#load").css("display","none");
+	},400);
+	
 
 }
 
