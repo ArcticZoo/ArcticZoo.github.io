@@ -16,6 +16,11 @@ body{
 }
 
 @font-face {
+  font-family: 'pinghei-light';
+  src: url('font/PingFangLight.ttf') format('truetype');
+  font-style: normal;
+}
+@font-face {
   font-family: 'pinghei-regular';
   src: url('font/PingFangRegular.ttf') format('truetype');
   font-style: normal;
@@ -29,13 +34,12 @@ body{
 	position: fixed;
 	z-index: 9999;
 }
-#load p{
-	color: #666;
-	font-size: 12px;
-	height:12px;
-	width: 70px;
+#load img{
+	max-width: 50px;
 	margin:0 auto;
-	line-height: 100vh;
+	position: fixed;
+	top: 49vh;
+	left: 50vw;
 }
 #top{
 	background:#111;
