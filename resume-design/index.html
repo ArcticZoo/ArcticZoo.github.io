@@ -1,106 +1,73 @@
-<!doctype html>
-<html>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-  <title>Resume</title>
-  <link href="main.css" rel="stylesheet" type="text/css" />
-  <body>
-    <div id="load"><img src="load.gif" /></div>
-    <div id="top"><p>请使用chrome浏览器来获得最佳浏览效果</p></div>
-    <div id="left">
-        <div id="withMe"></div>
-        <img src="IMG/left.png" />
-    </div>
-    <nav id="right">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>jQuery单页/全屏滚动插件onepage-scroll演示-基本演示_dowebok</title>
+<link rel="stylesheet" href="css/onepage-scroll.css" />
+<link rel="stylesheet" href="css/resume.css" />
+<style>
+.page1 {}
+.page2 {}
+.page3 {}
+.page4 {}
+.page5 {}
+.page6 {}
+p.title { position: relative; top: 35%; font: 700 40px "Microsoft Yahei"; color: #aaa; text-align: center;}
+</style>
+<script src="js/jquery-1.9.0.min.js"></script>
+<script src="js/jquery.onepage-scroll.min.js"></script>
+<script>
+$(function(){
+	$('.main').onepage_scroll({
+		sectionContainer: '.page'
+	});
+});
+</script>
+</head>
 
-    	<a href="javascript:goTo(2)"><div id="index1" class="on"></div><p class="p1">About Me</p></a>
-    	<a href="javascript:goTo(3)" ><div id="index2" class=""></div><p class="p2">Skill</p></a>
-    	<a href="javascript:goTo(4)" ><div id="index3" class=""></div><p class="p3">Project</p></a>
-    	<a href="javascript:goTo(5)" ><div id="index4" class=""></div><p class="p4">Record</p></a>
-    	<a href="javascript:goTo(6)" ><div id="index5" class=""></div><p class="p5">Contact Me</p></a>
-       
-    </nav>
-    <nav class="phoneNav">
-        <p class="phone1">/ About Me</p>
-        <p class="phone2">/ Skill</p>
-        <p class="phone3">/ Project</p>
-        <p class="phone4">/ Record</p>
-        <p class="phone5">/ Contact Me</p>
-    </nav>
-    <section id="main">
-        <img src="IMG/main.png" />
-    </section>
-    <section class="section2" ID="s2">
-        <p>具有很强的自我学习能力，<br>
-        有过2年的数字媒体设计经历，熟练使用PS,PR,LR,AE,C4D,Sketch<br>
-热爱艺术，喜欢摄影，绘画<br>
-图虫3000+粉丝，系统学习过半年素描/插画<br>
-逻辑和感性审美并存，享受这种左右脑交流沟通碰撞的过程。<br>
-十分享受创造的过程。<br>
-具有基本前端知识，熟悉HTML5,CSS3并做过类似项目，所以自信能无障碍的与程序猿沟通需求。<br>
-<br><br>
-求职意向<br>
-UI设计 / 交互设计 / web设计 <br>
-</p>
-    </section>
-    <section class="section3" ID="s3">
-        <div class="wrapS3">
-        <p>UI设计</p>
-        <p>网页设计</p>
-        <p>平面设计</p>
-        <p>摄影/后期</p>
-        <p>视频剪辑/调色</p>
-        <p>C4D建模/动画</p>
-        <p>交互设计</p>
-        <p>动效设计</p>
-        <p>AE表达式</p>
-    	<p>CSS重构</p>
-    	<p>HTML5</p>
-    	<p>移动端页面重构</p>
-    	<p>JavaScript</p>
-    	<p>JQUERY</p>
-    	<p>Bootstrap</p>
-        </div>
-    </section>
-    <section class="section4" ID="s4">
-    	<p><strong>项目经验</strong><br><br>
-        <i>2016.3-至今</i><br>
-        手机端Todo-List软件UI设计<br>
-    	<i>2016.3</i><br>
-    	个人简历WEB版本<br>
-        独立完成设计/重构/代码工作<br>
-<i>2016.1 - 2016.3</i><br>
-百度IFE前端学院前端教程学习，完成task1，task2.均用原生JavaScript实现，<br>在这个过程中巩固了JS知识，熟悉了闭包，作用域，原型链，OOP等知识<br>
-<i>2015.6</i><br>
-将2年来在学校的摄影集结成明信片，重新设计排版。做出了重邮24节气图，在空间，朋友圈进行推广，广受好评<br>
-<i>2015.4</i><br>
-负责重邮色彩文化产品制作。做出了一套以所在大学色彩为线索的明信片，产品定位为重邮毕业生的礼物，曾被重庆晨报报导<br>
-<i>2013.10-2015.7</i><br>
-在文化创意部从事长达2年的数字媒体艺术工作。负责整个学生会的海报，视频，网页，宣传册，文化产品制作<br>
-<br><br><br>
+<body>
+<div id="up" class="detail">
+	<img src="img/left.png">
+</div>
+<div class="main">
+	<div class="page page1">
+		<div class="card1">
+			<img src="img/title.png" />
+			<p>施工中...</p>
+		</div>
+	</div>
+	<div class="page page2">
+		<div class="card2">
+			<img src="img/card2.png" />
+		</div>
+	</div>
+	<div class="page page3">
+		<p class="title">第三屏</p>
+	</div>
+	<div class="page page4">
+		<p class="title">第四屏</p>
+	</div>
+	<div class="page page5">
+		<p class="title">第5屏</p>
+	</div>
+	<div class="page page6">
+		<p class="title">第6屏</p>
+	</div>
+</div>
+<div id="down" class="ruler">
+	<img src="img/ruler.png">
+</div>
 
-    	</p>
 
-    </section>
-    <section class="section5" ID="s5">
-    	<p><strong>学校活动</strong><br><br><i>2014-2015</i><br>
-    	担任校学生会文化创意部副部长，从事数字媒体艺术工作，<br>
-    	负责整个学生会的海报，视频，网页，宣传册，文化产品制作<br>
-        在此期间学习设计，编导类知识，积累了丰富的项目经验<br>
-    	<i>2015-2016</i><br>
-    	担任所在学院学生会副主席，负责宣传，文化氛围工作<br>
-    	积累了一些运营新媒体的经验<br></p>
-    </section>
-    <section class="section6" ID="s6">
-    	<p>我的博客<br> <a href="http://www.arcticzoo.top">http://www.arcticzoo.top<a></p>
-    	<p>我的站酷<br> <a href="http://arctic.zcool.com.cn/">http://arctic.zcool.com.cn/</a></p>
-    	<p>摄影集<br> <a href="https://arctic.tuchong.com/">https://arctic.tuchong.com/</a></p>
-    	<p>我的邮箱<br>a417803060@126.com</p>
-        <img src="IMG/code.png" />
-        <p style="font-size: 12px;margin-bottom: 30px; opacity: 1;">扫描二维码在手机端查看<br>请使用chrome浏览器打开以获得最佳显示效果</p>
-    </section>
 
-  </body>
-  <script type="text/javascript" src="jquery-2.2.2.min.js"></script>
-  <script type="text/javascript" src="main.js"></script>
- </html>
+
+
+
+
+
+
+
+<a href="http://www.dowebok.com/" style="display: none;">dowebok</a>
+<a href="http://www.dowebok.com/118.html" style="display: none;">onepage-scroll – jQuery单页/全屏滚动插件</a>
+</body>
+</html>
