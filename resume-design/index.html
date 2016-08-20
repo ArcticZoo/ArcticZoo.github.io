@@ -8,8 +8,10 @@
 <style>
 p.title { position: relative; top: 35%; font: 700 40px "Microsoft Yahei"; color: #aaa; text-align: center;}
 </style>
-<script src="js/jquery-1.9.0.min.js"></script>
+<script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/jquery.onepage-scroll.min.js"></script>
+<script type='text/javascript' src='js/jquery.particleground.js'></script>
+<script type='text/javascript' src='js/demo.js'></script>
 <script>
 $(function(){
 	$('.main').onepage_scroll({
@@ -45,17 +47,13 @@ $(function(){
 	<div class="page page3">
 		<p class="title">第三屏/施工中</p>
 	</div>
-	<div class="page page4">
-		<p class="title">第四屏</p>
-	</div>
-	<div class="page page5">
-		<p class="title">第5屏</p>
-	</div>
-	<div class="page page6">
-		<p class="title">第6屏</p>
+</div>
+<div id="particles">
+	<div class="intro">
 	</div>
 </div>
 <div id="down" class="ruler">
+    <div class="move-line"></div>
 	<img src="img/ruler.png">
 </div>
 
@@ -63,12 +61,5 @@ $(function(){
 
 
 
-
-
-
-
-
-<a href="http://www.dowebok.com/" style="display: none;">dowebok</a>
-<a href="http://www.dowebok.com/118.html" style="display: none;">onepage-scroll – jQuery单页/全屏滚动插件</a>
 </body>
 </html>
