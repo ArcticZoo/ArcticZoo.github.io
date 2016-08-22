@@ -92,9 +92,35 @@ body{
   margin: auto;
   position: absolute;
   top: 0;bottom: 0;left: 0;right: 0;
+  z-index: 9;
 }
 .main .page3 .wrap-card3 img{
   max-width: 200px;
   margin-right: -10px;
   margin-left: -10px;
+  transition: .5s;
+}
+.main .page3 .wrap-card3 img:hover{
+  opacity: 0;
+}
+/*hover*/
+.main .page3 .wrap-card4{
+  width: 750px;
+  height: 266px;
+  margin: auto;
+  position: absolute;
+  top: 0;bottom: 0;left: 0;right: 0;
+  z-index: 8;
+}
+.main .page3 .wrap-card4 img{
+  margin-top: -1px;
+  max-width: 200px;
+  margin-right: -10px;
+  margin-left: -10px;
+  opacity: 0;
+  transition: .5s;
+}
+.main .page3 .wrap-card3 img:hover{
+  opacity: 1;
+ 
 }

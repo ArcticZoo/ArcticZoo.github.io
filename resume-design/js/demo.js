@@ -12,4 +12,5 @@ $(document).ready(function() {
   $(document).mousemove(function(e){  //body只是元素的显示范围,document是整个文档的范围
         $(".move-line").css("left",e.pageX);
   });
+
 });
