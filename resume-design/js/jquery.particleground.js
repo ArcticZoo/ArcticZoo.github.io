@@ -386,19 +386,19 @@
   };
 
   $.fn[pluginName].defaults = {
-    minSpeedX: 0.1,
+    minSpeedX: 0.05,
     maxSpeedX: 0.7,
-    minSpeedY: 0.1,
+    minSpeedY: 0.05,
     maxSpeedY: 0.7,
     directionX: 'center', // 'center', 'left' or 'right'. 'center' = dots bounce off edges
     directionY: 'center', // 'center', 'up' or 'down'. 'center' = dots bounce off edges
-    density: 10000, // How many particles will be generated: one particle every n pixels
+    density: 15000, // How many particles will be generated: one particle every n pixels
     dotColor: '#666666',
     lineColor: '#666666',
-    particleRadius: 5, // Dot size //更改的变量
-    lineWidth: .7,
+    particleRadius: 4.7, // Dot size //更改的变量
+    lineWidth: .4,
     curvedLines: false,
-    proximity: 90, // How close two dots need to be before they join
+    proximity: 160, // How close two dots need to be before they join
     parallax: true,
     parallaxMultiplier: 5, // The lower the number, the more extreme the parallax effect
     onInit: function() {},

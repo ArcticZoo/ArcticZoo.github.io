@@ -10,9 +10,18 @@ body{
 #up img{
   max-height: 110px;
 }
+#up .left2{
+  margin-left: -90px;
+  opacity: 0;
+}
+#up .left3{
+  margin-left: -80px;
+  opacity: 0
+}
+
 #down{
   position: fixed;
-  top: 66%;
+  bottom:0px;
   z-index: -1;
   left: 0px;
 }
@@ -20,15 +29,15 @@ body{
   max-height: 28px;
   width: 102%;
   margin:0;
-  opacity: .7;
+  opacity: .8;
 
 }
 #down .move-line{
-  height: 22px;
+  height: 24px;
   width: 2px;
   background: #ccc;
   position: relative;
-  margin-bottom:-14px;
+  margin-bottom:-12px;
   left: 10px;
   transition: 1s;
 }

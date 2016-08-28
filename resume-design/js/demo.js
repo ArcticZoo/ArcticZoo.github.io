@@ -1,8 +1,8 @@
 $(document).ready(function() {
 	//生成粒子
   $('#particles').particleground({
-    dotColor: '#e6f1f6',
-    lineColor: '#e6f1f6'
+    dotColor: '#cfeef6',
+    lineColor: '#cfeef6'
   });
   $('.intro').css({
     'margin-top': -($('.intro').height() / 2)
