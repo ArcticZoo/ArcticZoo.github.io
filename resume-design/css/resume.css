@@ -81,24 +81,31 @@ body{
   max-height: 17px;
     margin:auto;
   position: absolute;
-  top: -320px; left: 0; bottom: 0; right: 0;
+  top: -330px; left: 0; bottom: 0; right: 0;
 }
 .main .page2 .card2 .wave{
   max-height: 16px;
   margin:auto;
   position: absolute;
-  top: -240px; left: 0; bottom: 0; right: 0;
+  top: -250px; left: 0; bottom: 0; right: 0;
   opacity: .4;
   transition: .4s;
 }
 .main .page2 .card2 .wave:hover{
   opacity: .9;
 }
+.main .page2 .card2 .dribbble{
+  max-height: 50px;
+  margin:auto;
+  position: absolute;
+  top: 240px; left: 0; bottom: 0; right: 0;
+  transition: .4s;
+}
 .main .page2 .card2 .dot{
   max-width: 8px;
   margin:auto;
   position: absolute;
-  top: 290px; left: 0; bottom: 0; right: 0;
+  top: 360px; left: 0; bottom: 0; right: 0;
   opacity: .5;
   transition: .4s;
 }
