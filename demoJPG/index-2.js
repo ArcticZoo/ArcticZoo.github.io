@@ -29,8 +29,8 @@ $(document).ready(function () {
     loop: false, // 循环模式选项
     freeMode : true,
     freeModeMomentum : true,
-    freeModeMomentumVelocityRatio : 0.2,
-    freeModeMomentumRatio : 0.7,
+    freeModeMomentumVelocityRatio : 0.1,
+    freeModeMomentumRatio : 0.2,
     watchSlidesProgress : true,
       on:{
      progress: function(progress){
