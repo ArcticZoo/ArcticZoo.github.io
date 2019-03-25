@@ -31,7 +31,7 @@ $(document).ready(function () {
       on:{
      progress: function(progress){
       //你的事件
-      touchNum=Math.floor(convertToRange(progress,[0.25,1],[0,53]));
+      touchNum=Math.floor(convertToRange(progress,[0,1],[0,53]));
       console.log(touchNum);
     },
     },
