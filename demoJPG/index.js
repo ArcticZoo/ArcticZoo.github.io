@@ -27,6 +27,7 @@ $(document).ready(function () {
  var mySwiper = new Swiper ('.swiper-container', {
     direction: 'horizontal', // 垂直切换选项
     loop: false, // 循环模式选项
+    speed:800,
     freeMode : false,
     freeModeMomentum : true,
     freeModeMomentumVelocityRatio : 0.4,
