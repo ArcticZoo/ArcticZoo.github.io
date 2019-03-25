@@ -29,7 +29,7 @@ $(document).ready(function () {
     loop: false, // 循环模式选项
     freeMode : true,
     freeModeMomentum : true,
-    freeModeMomentumVelocityRatio : 0.4,
+    freeModeMomentumVelocityRatio : 0.2,
     freeModeMomentumRatio : 0.7,
     watchSlidesProgress : true,
       on:{
