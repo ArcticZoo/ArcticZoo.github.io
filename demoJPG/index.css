@@ -1,0 +1,18 @@
+.swiper-container {
+    width: 296.29px;
+    height: 524px;
+    display: inline-block;
+    background-color: #aaa;
+    opacity: .21;
+    position:fixed;
+
+}  
+
+#canvas{
+	display: inline-block;
+    width: 296.29px;
+    height: 524px;
+    position: fixed;
+    left:0;
+
+}
