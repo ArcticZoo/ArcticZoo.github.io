@@ -5,7 +5,7 @@ var touchNum=0;
 function convertToRange(value, srcRange, dstRange){
   // value is outside source range return
   if ( value > srcRange[1]){
-    return 53; 
+    return 71; 
   }
   if (value < srcRange[0]){
     return 0; 
@@ -31,7 +31,7 @@ $(document).ready(function () {
       on:{
      progress: function(progress){
       //你的事件
-      touchNum=Math.floor(convertToRange(progress,[0,1],[0,53]));
+      touchNum=Math.floor(convertToRange(progress,[0,1],[0,71]));
       console.log(touchNum);
     },
     },
@@ -45,8 +45,8 @@ $(document).ready(function () {
 	//play
     var canvas = document.getElementById("canvas");
         //设置宽高不从css中设置
-        canvas.width = 296.29;//设置canvas宽
-        canvas.height = 524;//设置canvas高
+        canvas.width = 402;//设置canvas宽
+        canvas.height = 720;//设置canvas高
         //获取上下文
         var ctx = canvas.getContext("2d");
         //加载图片
@@ -59,18 +59,18 @@ $(document).ready(function () {
                 ctx.clearRect(0,0,canvas.width,canvas.height);
                 ctx.drawImage(
                     img
-                    , touchNum*296.29    //截取原始图片的 x坐标
-                    , dirIndex*524    //截取原始图片的 y坐标
-                    , 296.29    //截取原始图片的 宽度
-                    , 524    // 截取的高度
+                    , touchNum*402    //截取原始图片的 x坐标
+                    , dirIndex*720    //截取原始图片的 y坐标
+                    , 402    //截取原始图片的 宽度
+                    , 720    // 截取的高度
                     , 0    //图片在canvas画布上的x坐标
                     , 0    //图片在canvas画布上的y坐标
-                    , 296.29    //绘制图片的宽度
-                    , 524 *1    //绘制图片的高度
+                    , 402    //绘制图片的宽度
+                    , 720 *1    //绘制图片的高度
                 );
                 frameIndex++;// 添加到下一帧
-                frameIndex %=54;// 取余数   7 %4 = 3   3%4 =3  4%4 =0
-            },50)
+                frameIndex %=71;// 取余数   7 %4 = 3   3%4 =3  4%4 =0
+            },10)
         }
 
 })
