@@ -30,7 +30,7 @@ $(document).ready(function () {
     freeMode : true,
     freeModeMomentum : true,
     freeModeMomentumVelocityRatio : 0.4,
-    freeModeMomentumRatio : 0.3,
+    freeModeMomentumRatio : 0.7,
     watchSlidesProgress : true,
       on:{
      progress: function(progress){
